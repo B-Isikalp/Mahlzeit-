@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f2">
+  <meta name="description" content="Mahlzeit – entdecke einfache, inspirierende Rezepte aus aller Welt.">
+  <title>Mahlzeit – Was kochen wir heute?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" id="homeLink" aria-label="Mahlzeit Startseite">
+      <span class="brand-mark" aria-hidden="true">m<span>!</span></span>
+      <span class="brand-name">mahlzeit<span class="brand-dot">.</span></span>
+    </a>
+    <div class="header-note"><span class="live-dot"></span> Gute Ideen. Gutes Essen.</div>
+  </header>
+
+  <main>
+    <section id="overviewView" class="view">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> DEIN KLEINER KÜCHENKOMPASS</p>
+          <h1>Was gibt’s<br>heute <em>Leckeres?</em></h1>
+          <p class="hero-subtitle">Weniger suchen. Mehr genießen. Finde dein nächstes Lieblingsgericht.</p>
+          <form id="searchForm" class="search-form" role="search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <label class="sr-only" for="searchInput">Rezepte suchen</label>
+            <input id="searchInput" type="search" placeholder="Gericht suchen, z. B. Arrabiata …" autocomplete="off">
+            <button class="button button-primary search-button" type="submit">Suchen <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="hero-meta"><span>✳</span> Inspiration für jeden Tag</div>
+        </div>
+        <div class="hero-art" aria-label="Kulinarische Inspiration">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="hero-sticker">MADE WITH<br><strong>♥</strong><br>AT HOME</div>
+          <img class="hero-image" src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg" alt="Frisch zubereitetes Nudelgericht" onerror="this.style.display='none'">
+          <div class="hero-caption"><span class="caption-spark">✳</span><span><strong>Dein nächster Küchenhit</strong><small>ist nur einen Klick entfernt</small></span></div>
+        </div>
+      </section>
+
+      <section class="discover-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">FINDE DEINEN GESCHMACK</p><h2>Heute schon <em>Appetit?</em></h2></div>
+          <button id="surpriseButton" class="button button-dark surprise-button" type="button"><span aria-hidden="true">✳</span> Überrasch mich <span aria-hidden="true">↗</span></button>
+        </div>
+        <div id="categoryChips" class="category-chips" aria-label="Rezeptkategorien">
+          <button class="chip active" data-category="" type="button">Alle Gerichte</button>
+        </div>
+        <div class="results-bar"><p id="resultsLabel">Ein paar Ideen für dich</p><span id="resultsCount" class="results-count"></span></div>
+        <div id="statusMessage" class="status-message" role="status" aria-live="polite" hidden></div>
+        <div id="mealGrid" class="meal-grid" aria-live="polite"></div>
+        <button id="loadMoreButton" class="button button-outline load-more" type="button" hidden>Weitere Gerichte laden <span aria-hidden="true">↓</span></button>
+      </section>
+    </section>
+
+    <section id="recipeView" class="view recipe-view" hidden>
+      <button id="backButton" class="back-link" type="button"><span aria-hidden="true">←</span> Zurück zur Übersicht</button>
+      <div id="recipeContent"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#" id="footerHome">mahlzeit<span>.</span></a>
+    <p>Mit Appetit entdeckt. Mit Liebe gekocht.</p>
+    <p class="footer-credit">Rezepte bereitgestellt von <a href="https://www.themealdb.com/" target="_blank" rel="noreferrer">TheMealDB</a></p>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
